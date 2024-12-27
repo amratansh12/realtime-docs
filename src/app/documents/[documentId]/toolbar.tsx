@@ -21,6 +21,8 @@ import { FontFamilyButton } from "./font-family-button";
 import { HeadingLevelButton } from "./heading-level-button";
 import { TextColorButton } from "./text-color-button";
 import { HighlightColorButton } from "./highlight-color-button";
+import { LinkButton } from "./link-button";
+import { ImageButton } from "./image-button";
 
 interface ToolbarButtonProps {
   onClick?: () => void;
@@ -144,6 +146,8 @@ export const Toolbar = () => {
       <TextColorButton />
       <HighlightColorButton />
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <LinkButton />
+      <ImageButton />
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}

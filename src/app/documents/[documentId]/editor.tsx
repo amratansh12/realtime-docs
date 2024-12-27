@@ -6,6 +6,7 @@ import FontFamily from "@tiptap/extension-font-family";
 import Highlight from "@tiptap/extension-highlight";
 import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
+import Link from "@tiptap/extension-link";
 import StarterKit from "@tiptap/starter-kit";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
@@ -58,6 +59,9 @@ export const Editor = () => {
       Color,
       FontFamily,
       Highlight.configure({ multicolor: true }),
+      Link.configure({
+        openOnClick: false,
+      }),
       Image,
       ImageResize,
       TaskItem.configure({
