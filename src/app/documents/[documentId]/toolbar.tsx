@@ -17,12 +17,14 @@ import {
 
 import { useEditorStore } from "@/store/use-editor-store";
 import { Separator } from "@/components/ui/separator";
-import { FontFamilyButton } from "./font-family-button";
-import { HeadingLevelButton } from "./heading-level-button";
-import { TextColorButton } from "./text-color-button";
-import { HighlightColorButton } from "./highlight-color-button";
-import { LinkButton } from "./link-button";
-import { ImageButton } from "./image-button";
+import { FontFamilyButton } from "./_components/font-family-button";
+import { HeadingLevelButton } from "./_components/heading-level-button";
+import { TextColorButton } from "./_components/text-color-button";
+import { HighlightColorButton } from "./_components/highlight-color-button";
+import { LinkButton } from "./_components/link-button";
+import { ImageButton } from "./_components/image-button";
+import { AlignButton } from "./_components/align-button";
+import { ListButton } from "./_components/list-button";
 
 interface ToolbarButtonProps {
   onClick?: () => void;
@@ -133,12 +135,16 @@ export const Toolbar = () => {
       {sections[0].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
+
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <FontFamilyButton />
+
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <HeadingLevelButton />
+
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       {/* Font Size */}
+
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       {sections[1].map((item) => (
         <ToolbarButton key={item.label} {...item} />
@@ -148,6 +154,9 @@ export const Toolbar = () => {
       <Separator orientation="vertical" className="h-6 bg-neutral-300" />
       <LinkButton />
       <ImageButton />
+      <AlignButton />
+      <ListButton />
+
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
