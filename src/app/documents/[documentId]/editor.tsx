@@ -7,6 +7,7 @@ import Highlight from "@tiptap/extension-highlight";
 import Image from "@tiptap/extension-image";
 import ImageResize from "tiptap-extension-resize-image";
 import Link from "@tiptap/extension-link";
+import { LineHeightExtension } from "@/extensions/line-height";
 import StarterKit from "@tiptap/starter-kit";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
@@ -64,6 +65,9 @@ export const Editor = () => {
       Highlight.configure({ multicolor: true }),
       Link.configure({
         openOnClick: false,
+      }),
+      LineHeightExtension.configure({
+        types: ["heading", "paragraph"],
       }),
       Image,
       ImageResize,
